@@ -1,0 +1,62 @@
+import java.io.*;
+public class CohortUnionDriver{
+	public static void main(String args[]) {
+        //String fileName = args[1];
+        String fileName = "testCase1.txt";
+
+        String line = null;
+
+        try {
+            FileReader fileReader = 
+                new FileReader(fileName);
+
+            BufferedReader bufferedReader = 
+                new BufferedReader(fileReader);
+
+            while((line = bufferedReader.readLine()) != null) {
+                if(line.substring(0,6).equals("Inputs")){
+
+                    String tempA = line.substring(line.indexOf('[',0),line.indexOf(']',1)+1);
+                    String tempB = line.substring(line.indexOf('[',line.indexOf('[',0)+1),line.indexOf(']',line.indexOf(']',1)+1)+1);
+                    int nA = (tempA.length() -2)/2 + ((tempA.length() % 2 == 0) ? 0 : 1);
+                    int nB = (tempB.length() -2)/2 + ((tempB.length() % 2 == 0) ? 0 : 1);
+                    int[] a = new int[nA];
+                    int[] b = new int[nB];
+
+                    for(int ch = 1; !tempA.substring(ch,ch+1).equals("]"); ch++){
+                        if(!tempA.substring(ch,ch+1).equals(",")){
+                            a[ch/2]=Integer.valueOf(tempA.substring(ch,ch+1));
+                        }
+                    }
+
+                    for(int ch = 1; !tempB.substring(ch,ch+1).equals("]"); ch++){
+                        if(!tempB.substring(ch,ch+1).equals(",")){
+                            b[ch/2]=Integer.valueOf(tempB.substring(ch,ch+1));
+                        }
+                    }
+		    System.out.println("WORKING");
+                    //Cohort cohortA = new Cohort("a", "a", a);
+                    //Cohort cohortB = new Cohort("b", "b", b);
+
+                    try {
+                        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("../myfile2.txt", true)));
+                        out.println("does it work?");
+                        out.close();
+                        //print the oracle, etc.
+                    } catch (IOException e) {
+                        System.out.println("IOWriteException");                  
+
+                    }
+                }
+            }   
+
+            bufferedReader.close();         
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println("FileNotFoundException");                
+        }
+        catch(IOException ex) {
+            System.out.println("IOReadException");                  
+        }
+	}
+}

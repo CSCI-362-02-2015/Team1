@@ -1,0 +1,8 @@
+Test ID:	2
+Requirement:	The union of a non-empty Cohort and an empty Cohort
+Component:	Cohort
+Method:		public static Cohort union(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] []
+Expected:	[1,2,3,4,5]
+Driver:		CohortUnionDriver "testCase2.txt"
+Notes:

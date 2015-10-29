@@ -1,0 +1,8 @@
+Test ID:	1
+Requirement:	The union of two intersecting Cohorts
+Component:	Cohort
+Method:		public static Cohort union(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] [3,4,5]
+Expected:	[1,2,3,4,5]
+Driver:		-cp openmrs-core/api/target/classes CohortUnionDriver "testCase1.txt"
+Notes:

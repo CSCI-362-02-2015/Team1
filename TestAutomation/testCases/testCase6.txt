@@ -1,0 +1,8 @@
+TestID:		6
+Requirement:	The union of two large numbered Cohorts
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1234567,2345678,3456789,4567890] [3,4,5]
+Expected:	[1234567,2345678,3456789,4567890,3,4,5]
+Driver:		CohortUnionDriver "testCase6.txt"
+Notes:
