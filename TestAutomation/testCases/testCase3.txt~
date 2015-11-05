@@ -1,8 +1,0 @@
-Test ID:	3
-Requirement:	The union of two empty Cohorts
-Component:	Cohort
-Method:		public static Cohort union(Cohort a, Cohort b)
-Inputs:		[] []
-Expected:	[]
-Driver:		-cp openmrs-core/api/target/classes/ CohortUnionDriver "testCase3.txt"
-Notes:

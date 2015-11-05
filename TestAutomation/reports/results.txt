@@ -1,0 +1,38 @@
+<html>
+Test ID: 1
+Requirement: The union of two intersecting Cohorts
+Inputs: [1,2,3,4,5] [3,4,5]
+Expected: [1,2,3,4,5]
+Test: Passed
+ 
+Test ID: 2
+Requirement: The union of a non-empty Cohort and an empty Cohort
+Inputs: [1,2,3,4,5] []
+Expected: [1,2,3,4,5]
+Test: Passed
+ 
+Test ID: 3
+Requirement: The union of two empty Cohorts
+Inputs: [] []
+Expected: []
+Test: Passed
+ 
+Test ID: 4
+Requirement: The union of two non-intersecting Cohorts
+Inputs: [1,2,3] [4,5]
+Expected: [1,2,3,4,5]
+Test: Passed
+ 
+TestID: 5
+Requirement: The subtraction of two interesting Cohorts
+Inputs: [1,2,3,4,5] [3,4,5]
+Expected: [1,2]
+Test: Failed
+ 
+TestID: 6
+Requirement: The union of two large numbered Cohorts
+Inputs: [1234567,2345678,3456789,4567890] [3,4,5]
+Expected: [1234567,2345678,3456789,4567890,3,4,5]
+Test: Failed
+ 
+</html>

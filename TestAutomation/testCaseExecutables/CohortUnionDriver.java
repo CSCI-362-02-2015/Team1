@@ -1,82 +1,58 @@
 import java.io.*;
-import org.openmrs.*;
+import java.util.*;
+//import org.openmrs.*;
+
 public class CohortUnionDriver{
   public static void main(String args[]) {
-        //String fileName = args[1];
-        String fileName = "testCase1.txt";
-        System.out.println("test");
+        String fileName = args[0];
         String line = null;
+        Cohort2 cohortA;
+        Cohort2 cohortB;
+        Cohort2 result;
+        Integer[] expected;
+       	String input = args[1];
+        String output = args[2];
 
-        try {
-            FileReader fileReader = 
-                new FileReader(fileName);
-
-            BufferedReader bufferedReader = 
-                new BufferedReader(fileReader);
-
-            while((line = bufferedReader.readLine()) != null) {
-                if(line.substring(0,6).equals("Inputs")){
-
-                    String tempA = line.substring(line.indexOf('[',0),line.indexOf(']',1)+1);
-                    String tempB = line.substring(line.indexOf('[',line.indexOf('[',0)+1),line.indexOf(']',line.indexOf(']',1)+1)+1);
-                    int nA = (tempA.length() -2)/2 + ((tempA.length() % 2 == 0) ? 0 : 1);
-                    int nB = (tempB.length() -2)/2 + ((tempB.length() % 2 == 0) ? 0 : 1);
-                    Integer[] a = new Integer[nA];
-                    int[] b = new int[nB];
-
-                    for(int ch = 1; !tempA.substring(ch,ch+1).equals("]"); ch++){
-                        if(!tempA.substring(ch,ch+1).equals(",")){
-                            a[ch/2]=Integer.valueOf(tempA.substring(ch,ch+1));
-                        }
-                    }
-
-                    for(int ch = 1; !tempB.substring(ch,ch+1).equals("]"); ch++){
-                        if(!tempB.substring(ch,ch+1).equals(",")){
-                            b[ch/2]=Integer.valueOf(tempB.substring(ch,ch+1));
-                        }
-                    }
-
-                    String stringA = new String("a");
-                    Cohort cohortA = new Cohort(stringA, stringA, a);
-                    //Cohort cohortB = new Cohort("b", "b", b);
-                    System.out.println("here");
-                    try {
-                        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("../reports/results.txt", true)));
-                        out.println(args[1]);
-                        out.println("<br>");
-                        Set<Integer> c = new HashSet<Integer>();
-                        c = cohortC.memberIDs;
-                        Integer[] arrC = new Integer[c.size()];
-                        count = 0;
-                        for(i : c){
-                            arrC[count++]=i; //http://stackoverflow.com/questions/7123580/problems-converting-set-of-integers-to-int-array
-                        }
-                        if(Array.deepEquals(arrC,arrO)){
-                            out.println("Pass<br>");
-                        }
-                        else {
-                            out.println("Fail<br>");
-                        }
-                        out.println();
-                        
-                        out.println("testing<br>");
-                        out.close();
-                        //print the oracle, etc.
-                    } catch (IOException e) {
-                        System.out.println("IOWriteException");                  
-
-                    }
-                    
-                }
-            }   
-
-            bufferedReader.close();         
+        String strA = new String("a");
+        String strB = new String("b");
+        cohortA = new Cohort2(strA, strA, CUD.getFirstArray(input));
+        cohortB = new Cohort2(strB, strB, CUD.getSecondArray(input));  
+        expected = CUD.getFirstArray(output);
+            
+        result = Cohort2.union(cohortA, cohortB);
+        Integer[] test = result.getMemberIds().toArray(new Integer[result.getMemberIds().size()]);
+        if(Arrays.deepEquals(test, expected)){
+        	System.out.println("Passed");
+        } else{
+        	System.out.println("Failed");
         }
-        catch(FileNotFoundException ex) {
-            System.out.println("FileNotFoundException");                
-        }
-        catch(IOException ex) {
-            System.out.println("IOReadException");                  
-        }
+
   }
+
+public static Integer[] getFirstArray(String input){
+ 	String temp = input.substring(input.indexOf('[',0),input.indexOf(']',1)+1);
+    int n = (temp.length() -2)/2 + ((temp.length() % 2 == 0) ? 0 : 1);
+    Integer[] array = new Integer[n];
+
+    for(int ch = 1; !temp.substring(ch,ch+1).equals("]"); ch++){
+        if(!temp.substring(ch,ch+1).equals(",")){
+            array[ch/2]=Integer.valueOf(temp.substring(ch,ch+1));
+        }
+    }
+    return array;
+  }
+
+public static Integer[] getSecondArray(String input){
+ 	String temp = input.substring(input.indexOf('[',input.indexOf('[',0)+1),input.indexOf(']',input.indexOf(']',1)+1)+1);
+    int n = (temp.length() -2)/2 + ((temp.length() % 2 == 0) ? 0 : 1);
+    Integer[] array = new Integer[n];
+
+    for(int ch = 1; !temp.substring(ch,ch+1).equals("]"); ch++){
+        if(!temp.substring(ch,ch+1).equals(",")){
+            array[ch/2]=Integer.valueOf(temp.substring(ch,ch+1));
+        }
+    }
+    return array;
+  }
+
 }
