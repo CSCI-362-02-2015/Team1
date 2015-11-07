@@ -17,8 +17,8 @@ cd ../reports
 echo "<html>" >> results.txt
 echo "<h1>Test Results</h1>" >> results.txt	
 
-#cd ../testCaseExecutables
-#javac -classpath "../project/openmrs-core/api/target/classes" CohortUnionDriver.java
+cd ../testCaseExecutables
+javac -cp ../project/openmrs-core/api/target/classes/org/openmrs *.java
 
 #loop through the test cases
 while [ $num -le $numTest ]; do
