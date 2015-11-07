@@ -57,5 +57,5 @@ done
 cd ../reports
 echo "</html>" >> results.txt
 
-#rename 's/\.txt$/\.html/' *.txt
-#xdg-open results.html
+rename 's/\.txt$/\.html/' *.txt
+xdg-open results.html
