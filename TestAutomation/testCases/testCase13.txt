@@ -1,0 +1,8 @@
+TestID:		13
+Requirement:	The intersection of two large numbered Cohorts is their intersection
+Component:	Cohort
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:		[123456,234567,345678,456789] [345678,456789,5]
+Expected:	[345678,456789]
+Driver:		CohortIntersectDriver
+Notes:

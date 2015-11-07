@@ -2,20 +2,20 @@ import java.io.*;
 import java.util.*;
 //import org.openmrs.*;
 
-public class CohortUnionDriver{
+public class CohortIntersectDriver{
   public static void main(String args[]) {
 
         String input = args[0];
         String output = args[1];
 
-        Cohort cohortA = new Cohort("a", "a", CohortUnionDriver.getFirstArray(input));
-        Cohort cohortB = new Cohort("b", "b", CohortUnionDriver.getSecondArray(input));  
-        Integer[] expected = CohortUnionDriver.getFirstArray(output);
+        Cohort cohortA = new Cohort("a", "a", CohortIntersectDriver.getFirstArray(input));
+        Cohort cohortB = new Cohort("b", "b", CohortIntersectDriver.getSecondArray(input));  
+        Integer[] expected = CohortIntersectDriver.getFirstArray(output);
             
-        Cohort cohortResult = Cohort.union(cohortA, cohortB);
+        Cohort cohortResult = Cohort.intersect(cohortA, cohortB);
         Integer[] result = cohortResult.getMemberIds().toArray(new Integer[cohortResult.getMemberIds().size()]);
         
-        if(CohortUnionDriver.arrayEquality(result,expected)){
+        if(CohortIntersectDriver.arrayEquality(result,expected)){
             System.out.println("Passed");
         } else{
             System.out.println("Failed");

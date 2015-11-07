@@ -29,11 +29,11 @@ import org.simpleframework.xml.Root;
  * This class represents a list of patientIds.
  */
 //@Root(strict = false)
-public class Cohort2{
+public class Cohort{
 	
 	public static final long serialVersionUID = 0L;
 	
-	//private static final Log log = LogFactory.getLog(Cohort2.class);
+	//private static final Log log = LogFactory.getLog(Cohort.class);
 	
 	private Integer cohortId;
 	
@@ -43,17 +43,17 @@ public class Cohort2{
 	
 	private Set<Integer> memberIds;
 	
-	public Cohort2() {
+	public Cohort() {
 		memberIds = new TreeSet<Integer>();
 	}
 	
 	/**
-	 * Convenience constructor to create a Cohort2 object that has an primarykey/internal identifier
+	 * Convenience constructor to create a Cohort object that has an primarykey/internal identifier
 	 * of <code>cohortId</code>
 	 * 
 	 * @param cohortId the internal identifier for this cohort
 	 */
-	public Cohort2(Integer cohortId) {
+	public Cohort(Integer cohortId) {
 		this();
 		this.cohortId = cohortId;
 	}
@@ -61,12 +61,12 @@ public class Cohort2{
 	/**
 	 * This constructor does not check whether the database contains patients with the given ids,
 	 * but
-	 * {@link org.openmrs.api.Cohort2Service#saveCohort2(Cohort2)} will.
+	 * {@link org.openmrs.api.CohortService#saveCohort(Cohort)} will.
 	 * @param name
 	 * @param description optional description
 	 * @param ids option array of Integer ids
 	 */
-	public Cohort2(String name, String description, Integer[] ids) {
+	public Cohort(String name, String description, Integer[] ids) {
 		this();
 		this.name = name;
 		this.description = description;
@@ -78,12 +78,12 @@ public class Cohort2{
 	/**
 	 * This constructor does not check whether the database contains patients with the given ids,
 	 * but
-	 * {@link org.openmrs.api.Cohort2Service#saveCohort2(Cohort2)} will.
+	 * {@link org.openmrs.api.CohortService#saveCohort(Cohort)} will.
 	 * @param name
 	 * @param description optional description
 	 * @param patients optional array of patients
 	 */
-	/** public Cohort2(String name, String description, Patient[] patients) {
+	/** public Cohort(String name, String description, Patient[] patients) {
 		this(name, description, (Integer[]) null);
 		if (patients != null) {
 			for (Patient p : patients) {
@@ -95,25 +95,25 @@ public class Cohort2{
 	/**
 	 * This constructor does not check whether the database contains patients with the given ids,
 	 * but
-	 * {@link org.openmrs.api.Cohort2Service#saveCohort2(Cohort2)} will.
+	 * {@link org.openmrs.api.CohortService#saveCohort(Cohort)} will.
 	 * @param patientsOrIds optional collection which may contain Patients, or patientIds which may
 	 *            be Integers, Strings, or anything whose toString() can be parsed to an Integer.
 	 *
 	 *@SuppressWarnings("unchecked")
-	 *public Cohort2(Collection patientsOrIds) {
+	 *public Cohort(Collection patientsOrIds) {
 	 *this(null, null, patientsOrIds);
 	 *}
 	 *
 	 * This constructor does not check whether the database contains patients with the given ids,
 	 * but
-	 * {@link org.openmrs.api.Cohort2Service#saveCohort2(Cohort2)} will.
+	 * {@link org.openmrs.api.CohortService#saveCohort(Cohort)} will.
 	 * @param name
 	 * @param description optional description
 	 * @param patientsOrIds optional collection which may contain Patients, or patientIds which may
 	 *            be Integers, Strings, or anything whose toString() can be parsed to an Integer.
 	 *
 	*@SuppressWarnings("unchecked")
-	*public Cohort2(String name, String description, Collection patientsOrIds) {
+	*public Cohort(String name, String description, Collection patientsOrIds) {
 *		this(name, description, (Integer[]) null);
 *		if (patientsOrIds != null) {
 *			for (Object o : patientsOrIds) {
@@ -131,10 +131,10 @@ public class Cohort2{
 *	
 	 * Convenience contructor taking in a string that is a list of comma separated patient ids This
 	 * constructor does not check whether the database contains patients with the given ids, but
-	 * {@link org.openmrs.api.Cohort2Service#saveCohort2(Cohort2)} will.
+	 * {@link org.openmrs.api.CohortService#saveCohort(Cohort)} will.
 	 * @param commaSeparatedIds
 	 *
-	*public Cohort2(String commaSeparatedIds) {
+	*public Cohort(String commaSeparatedIds) {
 *		this();
 *		for (StringTokenizer st = new StringTokenizer(commaSeparatedIds, ","); st.hasMoreTokens();) {
 *			String id = st.nextToken();
@@ -167,7 +167,7 @@ public class Cohort2{
 	}
 	
 	public String toString() {
-		StringBuilder sb = new StringBuilder("Cohort2 id=" + getCohort2Id());
+		StringBuilder sb = new StringBuilder("Cohort id=" + getCohortId());
 		if (getName() != null) {
 			sb.append(" name=" + getName());
 		}
@@ -203,12 +203,12 @@ public class Cohort2{
 	/**
 	 * Returns the union of two cohorts
 	 * 
-	 * @param a The first Cohort2
-	 * @param b The second Cohort2
-	 * @return Cohort2
+	 * @param a The first Cohort
+	 * @param b The second Cohort
+	 * @return Cohort
 	 */
-	public static Cohort2 union(Cohort2 a, Cohort2 b) {
-		Cohort2 ret = new Cohort2();
+	public static Cohort union(Cohort a, Cohort b) {
+		Cohort ret = new Cohort();
 		if (a != null) {
 			ret.getMemberIds().addAll(a.getMemberIds());
 		}
@@ -224,12 +224,12 @@ public class Cohort2{
 	/**
 	 * Returns the intersection of two cohorts, treating null as an empty cohort
 	 * 
-	 * @param a The first Cohort2
-	 * @param b The second Cohort2
-	 * @return Cohort2
+	 * @param a The first Cohort
+	 * @param b The second Cohort
+	 * @return Cohort
 	 */
-	public static Cohort2 intersect(Cohort2 a, Cohort2 b) {
-		Cohort2 ret = new Cohort2();
+	public static Cohort intersect(Cohort a, Cohort b) {
+		Cohort ret = new Cohort();
 		ret.setName("(" + (a == null ? "NULL" : a.getName()) + " * " + (b == null ? "NULL" : b.getName()) + ")");
 		if (a != null && b != null) {
 			ret.getMemberIds().addAll(a.getMemberIds());
@@ -241,12 +241,12 @@ public class Cohort2{
 	/**
 	 * Subtracts a cohort from a cohort
 	 * 
-	 * @param a the original Cohort2
-	 * @param b the Cohort2 to subtract
-	 * @return Cohort2
+	 * @param a the original Cohort
+	 * @param b the Cohort to subtract
+	 * @return Cohort
 	 */
-	public static Cohort2 subtract(Cohort2 a, Cohort2 b) {
-		Cohort2 ret = new Cohort2();
+	public static Cohort subtract(Cohort a, Cohort b) {
+		Cohort ret = new Cohort();
 		if (a != null) {
 			ret.getMemberIds().addAll(a.getMemberIds());
 			if (b != null) {
@@ -260,12 +260,12 @@ public class Cohort2{
 	// getters and setters
 	
 	//@Attribute(required = false)
-	public Integer getCohort2Id() {
+	public Integer getCohortId() {
 		return cohortId;
 	}
 	
 	//@Attribute(required = false)
-	public void setCohort2Id(Integer cohortId) {
+	public void setCohortId(Integer cohortId) {
 		this.cohortId = cohortId;
 	}
 	
@@ -296,7 +296,7 @@ public class Cohort2{
 	
 	/**
 	 * This method is only here for some backwards compatibility with the PatientSet object that
-	 * this Cohort2 object replaced. Do not use this method.
+	 * this Cohort object replaced. Do not use this method.
 	 * 
 	 * @deprecated use #getMemberIds()
 	 * @return the memberIds
@@ -319,7 +319,7 @@ public class Cohort2{
 
 	/**public Integer getId() {
 		
-		return getCohort2Id();
+		return getCohortId();
 	} */
 	
 	/**
@@ -327,7 +327,7 @@ public class Cohort2{
 	 * @see org.openmrs.OpenmrsObject#setId(java.lang.Integer)
 	 */
 	/** public void setId(Integer id) {
-		setCohort2Id(id);
+		setCohortId(id);
 		
 	} */
 }

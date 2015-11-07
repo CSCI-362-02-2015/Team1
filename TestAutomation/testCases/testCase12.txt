@@ -1,8 +1,8 @@
 TestID:		5
-Requirement:	The subtraction of two interesting Cohorts
+Requirement:	The subtraction of two non-interesting Cohorts
 Component:	Cohort
 Method:		public static Cohort subtract(Cohort a, Cohort b)
-Inputs:		[1,2,3,4,5] [3,4,5]
-Expected:	[1,2]
+Inputs:		[1,2,3,4,5] [6,7]
+Expected:	[1,2,3,4,5]
 Driver:		CohortSubtractDriver
 Notes:

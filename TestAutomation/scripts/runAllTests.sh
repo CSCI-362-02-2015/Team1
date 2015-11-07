@@ -25,9 +25,9 @@ while [ $num -le $numTest ]; do
 	var=$str$num$ext
 	while read p; do
 	    if [[ ${p:0:1} == D* ]];
-			then result=$(java -cp ../testCaseExecutables/ ${p:8} "$input" "$output"); 	#store any System.out from the driver as result and put in the report
+			then result=$(java -cp ../testCaseExecutables/:../project/openmrs-core/api/target/classes/org/openmrs ${p:8} "$input" "$output"); 	#store any System.out from the driver as result and put in the report
 			echo "Test: "$result >> ../reports/results.txt
-			echo $num
+			echo $num $result
 		fi
 
 		if [[ ${p:0:1} == T* ]];

@@ -1,0 +1,8 @@
+Test ID:	8
+Requirement:	The intersection of two intersecting Cohorts is their intersection with no duplicates
+Component:	Cohort
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:        [1,2,3,4,5] [3,4,5]
+Expected:	[3,4,5]
+Driver:		CohortIntersectDriver
+Notes:

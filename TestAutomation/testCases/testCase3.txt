@@ -4,5 +4,5 @@ Component:	Cohort
 Method:		public static Cohort union(Cohort a, Cohort b)
 Inputs:		[] []
 Expected:	[]
-Driver:		CohortUnionDriver "testCase3.txt"
+Driver:		CohortUnionDriver
 Notes:

@@ -1,0 +1,8 @@
+Test ID:	9
+Requirement:	The intersection of a non-empty Cohort and an empty Cohort is empty
+Component:	Cohort
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] []
+Expected:	[]
+Driver:		CohortIntersectDriver
+Notes:
