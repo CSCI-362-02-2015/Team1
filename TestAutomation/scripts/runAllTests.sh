@@ -1,5 +1,9 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 #remove old reports
 cd ../reports
 rm results.txt
@@ -17,7 +21,10 @@ cd ../reports
 echo "<html>" >> results.txt
 echo "<h1>Test Results</h1>" >> results.txt	
 
-cd ../testCaseExecutables
+cd ../project/openmrs-core/api/src/main/java/org/openmrs
+javac -d ../../../../../target/classes/org/openmrs Cohort.java
+
+cd ../../../../../../../../testCaseExecutables
 javac -cp ../project/openmrs-core/api/target/classes/org/openmrs *.java
 
 #loop through the test cases
@@ -29,8 +36,14 @@ while [ $num -le $numTest ]; do
 			#echo "Test: "$result >> ../reports/results.txt
 			if [[ $result == Passed ]];
 				then echo '<font color="green">Test: '$result' </font><br>' >> ../reports/results.txt;
+				echo -e Test $num ${GREEN}$result${NC}
 			fi 
-			echo $num $result
+			
+			if [[ $result == Failed ]];
+				then echo '<font color="red">Test: '$result' </font><br>' >> ../reports/results.txt;
+				echo -e $num ${RED}$result${NC}
+			fi 
+
 		fi
 
 		if [[ ${p:0:1} == T* ]];
