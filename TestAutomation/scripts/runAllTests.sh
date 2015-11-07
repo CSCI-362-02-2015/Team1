@@ -1,5 +1,4 @@
 #!/bin/bash
-. runAllTests
 
 #remove old reports
 cd ../reports
