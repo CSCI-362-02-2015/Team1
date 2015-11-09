@@ -1,8 +1,8 @@
 TestID:		5
-Requirement:	The subtraction of two interesting Cohorts
+Requirement:	The union of two large numbered Cohorts
 Component:	Cohort
 Method:		public static Cohort subtract(Cohort a, Cohort b)
-Inputs:		[1,2,3,4,5] [3,4,5]
-Expected:	[1,2]
-Driver:		CohortSubtractDriver
+Inputs:		[123456,234567,345678,456789] [3,4,5]
+Expected:	[123456,234567,345678,456789,3,4,5]
+Driver:		CohortUnionDriver
 Notes:
