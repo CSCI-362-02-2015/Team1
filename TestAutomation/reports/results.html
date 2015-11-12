@@ -1,45 +1,45 @@
 <html>
 <h1>Test Results</h1>
 Test ID: 1<br>
-Requirement: The union of two intersecting Cohorts<br>
+Requirement: The union of two Cohorts has no repeated values<br>
 Inputs: [1,2,3,4,5] [3,4,5]<br>
 Expected: [1,2,3,4,5]<br>
 <font color="green">Test Passed </font><br>
 <br>
 Test ID: 2<br>
-Requirement: The union of a non-empty Cohort and an empty Cohort<br>
+Requirement: The union of a non-empty Cohort and an empty Cohort is the non-empty cohort<br>
 Inputs: [1,2,3,4,5] []<br>
 Expected: [1,2,3,4,5]<br>
 <font color="green">Test Passed </font><br>
 <br>
 Test ID: 3<br>
-Requirement: The union of two empty Cohorts<br>
+Requirement: The union of two empty Cohorts is empty<br>
 Inputs: [] []<br>
 Expected: []<br>
 <font color="green">Test Passed </font><br>
 <br>
 Test ID: 4<br>
-Requirement: The union of two non-intersecting Cohorts<br>
+Requirement: The union of two non-intersecting Cohorts contains the values of both Cohorts<br>
 Inputs: [1,2,3] [4,5]<br>
 Expected: [1,2,3,4,5]<br>
 <font color="green">Test Passed </font><br>
 <br>
 TestID: 5<br>
-Requirement: The union of two large numbered Cohorts<br>
+Requirement: The union function can handle large numbers<br>
 Inputs: [123456,234567,345678,456789] [3,4,5]<br>
 Expected: [123456,234567,345678,456789,3,4,5]<br>
 <font color="green">Test Passed </font><br>
 <br>
 TestID: 6<br>
-Requirement: The union of an empty an non-empty Cohort<br>
+Requirement: The union of an empty an non-empty Cohort where the first Cohort is empty results in the non-empty Cohort<br>
 Inputs: [] [3,4,5]<br>
 Expected: [3,4,5]<br>
 <font color="green">Test Passed </font><br>
 <br>
-TestID: 6<br>
-Requirement: The union of two large numbered Cohorts<br>
-Inputs: [123456,234567,345678,456789] [3,4,5]<br>
-Expected: [123456,234567,345678,456789,3,4,5]<br>
+TestID: 7<br>
+Requirement: The intersect function can handle large numbered Cohorts<br>
+Inputs: [123456,234567,345678,456789] [345678,456789,5]<br>
+Expected: [345678,456789]<br>
 <font color="green">Test Passed </font><br>
 <br>
 Test ID: 8<br>
@@ -61,21 +61,93 @@ Expected: []<br>
 <font color="green">Test Passed </font><br>
 <br>
 Test ID: 11<br>
-Requirement: The union of two non-intersecting Cohorts is empty<br>
+Requirement: The intersection of two non-intersecting Cohorts is empty<br>
 Inputs: [1,2,3] [4,5]<br>
 Expected: []<br>
 <font color="green">Test Passed </font><br>
 <br>
-TestID: 5<br>
-Requirement: The subtraction of two non-interesting Cohorts<br>
-Inputs: [1,2,3,4,5] [6,7]<br>
-Expected: [1,2,3,4,5]<br>
+TestID: 12<br>
+Requirement: The intersection of two Cohorts, where the first Cohort is empty, is empty<br>
+Inputs: [] [6,7]<br>
+Expected: []<br>
 <font color="green">Test Passed </font><br>
 <br>
 TestID: 13<br>
-Requirement: The intersection of two large numbered Cohorts is their intersection<br>
-Inputs: [123456,234567,345678,456789] [345678,456789,5]<br>
-Expected: [345678,456789]<br>
+Requirement: The subtract function can handle large numbered Cohorts<br>
+Inputs: [123456,234567,345678,456789] [345678,456789]<br>
+Expected: [123456,234567]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 14<br>
+Requirement: The subtract of two intersecting Cohorts is their removes the values of the second Cohort from the first<br>
+Inputs: [1,2,3,4,5] [3,4,5]<br>
+Expected: [1,2]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 15<br>
+Requirement: The subtraction of an empty Cohort from a non-empty Cohort is the non-empty Cohort<br>
+Inputs: [1,2,3,4,5] []<br>
+Expected: [1,2,3,4,5]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 16<br>
+Requirement: The subtraction of two empty Cohorts is empty<br>
+Inputs: [] []<br>
+Expected: []<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 17<br>
+Requirement: The subtraction of two non-intersecting Cohorts is the first Cohort<br>
+Inputs: [1,2,3] [4,5]<br>
+Expected: [1,2,3]<br>
+<font color="green">Test Passed </font><br>
+<br>
+TestID: 18<br>
+Requirement: The subtraction of two Cohorts, where the first Cohort is empty, is empty<br>
+Inputs: [] [6,7]<br>
+Expected: []<br>
+<font color="green">Test Passed </font><br>
+<br>
+TestID: 19<br>
+Requirement: The intersection of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
+Inputs: [1,1,2,3] [1,2]<br>
+Expected: [1,2]<br>
+<font color="green">Test Passed </font><br>
+<br>
+TestID: 20<br>
+Requirement: The union of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
+Inputs: [1,1,2,3,4,5] [1,2,3]<br>
+Expected: [1,2,3,4,5]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 21<br>
+Requirement: The subtraction of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
+Inputs: [1,1,2,3,4,5] [3,4,5]<br>
+Expected: [1,2]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 22<br>
+Requirement: The union function can handle negative numbers<br>
+Inputs: [1,2,3,4,5] [-1,-2,-3]<br>
+Expected: [1,2,3,4,5,-1,-2,-3]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 23<br>
+Requirement: The subtract function can handle negative numbers<br>
+Inputs: [-1,-2,-3] [-1]<br>
+Expected: [-2,-3]<br>
+<font color="green">Test Passed </font><br>
+<br>
+Test ID: 24<br>
+Requirement: The intersect function can handle negative numbers<br>
+Inputs: [-1,-2,-3,-4,-5] [-4,-5]<br>
+Expected: [-4,-5]<br>
+<font color="green">Test Passed </font><br>
+<br>
+TestID: 25<br>
+Requirement: The intersect function can handle zero-filled numbers<br>
+Inputs: [1,2,3,4,5] [000001,00002]<br>
+Expected: [1,2]<br>
 <font color="green">Test Passed </font><br>
 <br>
 </html>

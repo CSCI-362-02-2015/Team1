@@ -1,0 +1,8 @@
+Test ID:	22
+Requirement:	The union function can handle negative numbers
+Component:	Cohort
+Method:		public static Cohort union(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] [-1,-2,-3]
+Expected:	[1,2,3,4,5,-1,-2,-3]
+Driver:		CohortUnionDriver
+Notes:

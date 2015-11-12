@@ -1,0 +1,8 @@
+Test ID:	14
+Requirement:	The subtract of two intersecting Cohorts is their removes the values of the second Cohort from the first
+Component:	Cohort
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:        [1,2,3,4,5] [3,4,5]
+Expected:	[1,2]
+Driver:		CohortSubtractDriver
+Notes:

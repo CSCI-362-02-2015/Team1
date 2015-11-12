@@ -1,0 +1,8 @@
+Test ID:	17
+Requirement:	The subtraction of two non-intersecting Cohorts is the first Cohort
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1,2,3] [4,5]
+Expected:	[1,2,3]
+Driver:		CohortSubtractDriver
+Notes:

@@ -1,8 +1,8 @@
-TestID:		6
-Requirement:	The union of two large numbered Cohorts
+TestID:		7
+Requirement:	The intersect function can handle large numbered Cohorts
 Component:	Cohort
-Method:		public static Cohort subtract(Cohort a, Cohort b)
-Inputs:		[123456,234567,345678,456789] [3,4,5]
-Expected:	[123456,234567,345678,456789,3,4,5]
-Driver:		CohortUnionDriver
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:		[123456,234567,345678,456789] [345678,456789,5]
+Expected:	[345678,456789]
+Driver:		CohortIntersectDriver
 Notes:

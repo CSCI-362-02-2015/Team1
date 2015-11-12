@@ -1,5 +1,5 @@
 TestID:		5
-Requirement:	The union of two large numbered Cohorts
+Requirement:	The union function can handle large numbers
 Component:	Cohort
 Method:		public static Cohort subtract(Cohort a, Cohort b)
 Inputs:		[123456,234567,345678,456789] [3,4,5]

@@ -68,4 +68,4 @@ done
 cd ../reports
 echo "</html>" >> results.html
 
-xgd-open results.html
+open results.html

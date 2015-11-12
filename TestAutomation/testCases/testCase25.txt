@@ -1,0 +1,8 @@
+TestID:		25
+Requirement:	The intersect function can handle zero-filled numbers
+Component:	Cohort
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] [000001,00002]
+Expected:	[1,2]
+Driver:		CohortIntersectDriver
+Notes:

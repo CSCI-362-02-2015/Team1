@@ -1,0 +1,8 @@
+Test ID:	21
+Requirement:	The subtraction of two Cohorts, where one Cohort has repeated values, has no repeated values
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:        [1,1,2,3,4,5] [3,4,5]
+Expected:	[1,2]
+Driver:		CohortSubtractDriver
+Notes:

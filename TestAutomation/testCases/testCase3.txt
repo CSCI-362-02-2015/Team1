@@ -1,5 +1,5 @@
 Test ID:	3
-Requirement:	The union of two empty Cohorts
+Requirement:	The union of two empty Cohorts is empty
 Component:	Cohort
 Method:		public static Cohort union(Cohort a, Cohort b)
 Inputs:		[] []

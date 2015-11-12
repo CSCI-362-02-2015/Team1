@@ -1,5 +1,5 @@
 Test ID:	2
-Requirement:	The union of a non-empty Cohort and an empty Cohort
+Requirement:	The union of a non-empty Cohort and an empty Cohort is the non-empty cohort
 Component:	Cohort
 Method:		public static Cohort union(Cohort a, Cohort b)
 Inputs:		[1,2,3,4,5] []

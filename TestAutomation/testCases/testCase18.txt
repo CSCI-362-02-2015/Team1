@@ -1,0 +1,8 @@
+TestID:		18
+Requirement:	The subtraction of two Cohorts, where the first Cohort is empty, is empty
+Component:	Cohort
+Method:		public static Cohort intersect(Cohort a, Cohort b)
+Inputs:		[] [6,7]
+Expected:	[]
+Driver:		CohortSubtractDriver
+Notes:

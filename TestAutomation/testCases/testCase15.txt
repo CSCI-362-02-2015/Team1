@@ -1,0 +1,8 @@
+Test ID:	15
+Requirement:	The subtraction of an empty Cohort from a non-empty Cohort is the non-empty Cohort
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] []
+Expected:	[1,2,3,4,5]
+Driver:		CohortSubtractDriver
+Notes:

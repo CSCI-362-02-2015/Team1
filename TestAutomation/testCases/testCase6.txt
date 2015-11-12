@@ -1,5 +1,5 @@
 TestID:		6
-Requirement:	The union of an empty an non-empty Cohort
+Requirement:	The union of an empty an non-empty Cohort where the first Cohort is empty results in the non-empty Cohort
 Component:	Cohort
 Method:		public static Cohort subtract(Cohort a, Cohort b)
 Inputs:		[] [3,4,5]

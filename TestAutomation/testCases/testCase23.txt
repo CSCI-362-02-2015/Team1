@@ -1,0 +1,8 @@
+Test ID:	23
+Requirement:	The subtract function can handle negative numbers
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[-1,-2,-3] [-1]
+Expected:	[-2,-3]
+Driver:		CohortSubtractDriver
+Notes:

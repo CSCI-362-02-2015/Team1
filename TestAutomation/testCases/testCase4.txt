@@ -1,5 +1,5 @@
 Test ID:	4
-Requirement:	The union of two non-intersecting Cohorts
+Requirement:	The union of two non-intersecting Cohorts contains the values of both Cohorts
 Component:	Cohort
 Method:		public static Cohort union(Cohort a, Cohort b)
 Inputs:		[1,2,3] [4,5]
