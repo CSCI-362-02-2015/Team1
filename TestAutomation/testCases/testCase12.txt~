@@ -1,4 +1,4 @@
-TestID:		12
+TestID:		5
 Requirement:	The subtraction of two non-interesting Cohorts
 Component:	Cohort
 Method:		public static Cohort subtract(Cohort a, Cohort b)

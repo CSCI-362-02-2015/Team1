@@ -1,0 +1,8 @@
+TestID:		16
+Requirement:	The union of two intersecting cohorts, one of which contains a duplicated item
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1,2,3,3] [4,5]
+Expected:	[1,2,3,4,5]
+Driver:		CohortUnionDriver
+Notes:

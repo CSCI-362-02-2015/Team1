@@ -1,0 +1,8 @@
+TestID:		15
+Requirement:	The subtraction of a cohort with one item from a cohort with a duplicated item
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1,2,3,3,4] [3]
+Expected:	[1,2,4]
+Driver:		CohortSubtractDriver
+Notes:		Both instances of the duplicated item were removed

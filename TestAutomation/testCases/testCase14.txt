@@ -1,0 +1,8 @@
+Test ID:	14
+Requirement:	The subtraction of two Cohorts which contain an intersecting subset 
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1,2,3,4,5] [4,5,6,7,8]
+Expected:	[1,2,3]
+Driver:		CohortSubtractDriver
+Notes:

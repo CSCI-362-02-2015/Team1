@@ -1,0 +1,8 @@
+TestID:		20
+Requirement:	The subtraction of two unorganized cohorts.
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[1,3,2][2,1,3]
+Expected:	[]
+Driver:		CohortSubtractDriver
+Notes:		

@@ -1,0 +1,8 @@
+TestID:		22
+Requirement:	The intersect of two unorganized cohorts will organize them.
+Component:	Cohort
+Method:		public static Cohort subtract(Cohort a, Cohort b)
+Inputs:		[3,2,1,4][4,1,2,3]
+Expected:	[1,2,3,4]
+Driver:		CohortIntersectDriver
+Notes:		

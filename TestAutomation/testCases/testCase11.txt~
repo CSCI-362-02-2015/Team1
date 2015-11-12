@@ -1,5 +1,5 @@
 Test ID:	11
-Requirement:	The intersection of two non-intersecting Cohorts is empty
+Requirement:	The union of two non-intersecting Cohorts is empty
 Component:	Cohort
 Method:		public static Cohort intersect(Cohort a, Cohort b)
 Inputs:		[1,2,3] [4,5]
