@@ -68,4 +68,8 @@ done
 cd ../reports
 echo "</html>" >> results.html
 
+<<<<<<< HEAD
 open results.html
+=======
+xdg-open results.html
+>>>>>>> 2bf5084efbfdf3fe214a9096253c6217f8c4f36e
