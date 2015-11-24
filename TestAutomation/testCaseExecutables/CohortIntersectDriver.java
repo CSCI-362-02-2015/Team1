@@ -10,7 +10,7 @@ public class CohortIntersectDriver{
 
         Cohort cohortA = new Cohort("a", "a", CohortIntersectDriver.getFirstArray(input));
         Cohort cohortB = new Cohort("b", "b", CohortIntersectDriver.getSecondArray(input));  
-        Integer[] expected = CohortIntersectDriver.getFirstArray(output);
+        Integer[] expected = CohortIntersectDriver.getFirstArray(input);
             
         Cohort cohortResult = Cohort.intersect(cohortA, cohortB);
         Integer[] result = cohortResult.getMemberIds().toArray(new Integer[cohortResult.getMemberIds().size()]);

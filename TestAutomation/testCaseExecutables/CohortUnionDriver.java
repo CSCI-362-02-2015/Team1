@@ -9,7 +9,7 @@ public class CohortUnionDriver{
         String output = args[1];
 
         Cohort cohortA = new Cohort("a", "a", CohortUnionDriver.getFirstArray(input));
-        Cohort cohortB = new Cohort("b", "b", CohortUnionDriver.getSecondArray(input));  
+        Cohort cohortB = new Cohort("b", "b", CohortUnionDriver.getFirstArray(input));  
         Integer[] expected = CohortUnionDriver.getFirstArray(output);
             
         Cohort cohortResult = Cohort.union(cohortA, cohortB);
@@ -91,9 +91,9 @@ public static Integer[] getSecondArray(String input){
 
 public static boolean arrayEquality(Integer[] array1, Integer[] array2){
     boolean found = false;
-    if(array1.length == 0 && array2.length == 0){
-        found = true;
-    } else{
+   // if(array1.length == 0 && array2.length == 0){
+    //    found = true;
+    //} else{
         for(int i=0; i<array1.length; i++){
             found = false;
             for(int j=0; j<array2.length; j++){
@@ -106,7 +106,7 @@ public static boolean arrayEquality(Integer[] array1, Integer[] array2){
                 break;
             }
         }
-    }
+   // }
     return found;
 }
 

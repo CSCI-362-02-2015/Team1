@@ -16,7 +16,7 @@ Test ID: 3<br>
 Requirement: The union of two empty Cohorts is empty<br>
 Inputs: [] []<br>
 Expected: []<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 4<br>
 Requirement: The union of two non-intersecting Cohorts contains the values of both Cohorts<br>
@@ -34,7 +34,7 @@ TestID: 6<br>
 Requirement: The union of an empty an non-empty Cohort where the first Cohort is empty results in the non-empty Cohort<br>
 Inputs: [] [3,4,5]<br>
 Expected: [3,4,5]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 TestID: 7<br>
 Requirement: The intersect function can handle large numbered Cohorts<br>
@@ -52,7 +52,7 @@ Test ID: 9<br>
 Requirement: The intersection of a non-empty Cohort and an empty Cohort is empty<br>
 Inputs: [1,2,3,4,5] []<br>
 Expected: []<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 10<br>
 Requirement: The intersection of two empty Cohorts is empty<br>
@@ -64,7 +64,7 @@ Test ID: 11<br>
 Requirement: The intersection of two non-intersecting Cohorts is empty<br>
 Inputs: [1,2,3] [4,5]<br>
 Expected: []<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 TestID: 12<br>
 Requirement: The intersection of two Cohorts, where the first Cohort is empty, is empty<br>
@@ -76,19 +76,19 @@ TestID: 13<br>
 Requirement: The subtract function can handle large numbered Cohorts<br>
 Inputs: [123456,234567,345678,456789] [345678,456789]<br>
 Expected: [123456,234567]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 14<br>
 Requirement: The subtract of two intersecting Cohorts is their removes the values of the second Cohort from the first<br>
 Inputs: [1,2,3,4,5] [3,4,5]<br>
 Expected: [1,2]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 15<br>
 Requirement: The subtraction of an empty Cohort from a non-empty Cohort is the non-empty Cohort<br>
 Inputs: [1,2,3,4,5] []<br>
 Expected: [1,2,3,4,5]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 16<br>
 Requirement: The subtraction of two empty Cohorts is empty<br>
@@ -100,13 +100,13 @@ Test ID: 17<br>
 Requirement: The subtraction of two non-intersecting Cohorts is the first Cohort<br>
 Inputs: [1,2,3] [4,5]<br>
 Expected: [1,2,3]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 TestID: 18<br>
 Requirement: The subtraction of two Cohorts, where the first Cohort is empty, is empty<br>
 Inputs: [] [6,7]<br>
 Expected: []<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 TestID: 19<br>
 Requirement: The intersection of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
@@ -124,7 +124,7 @@ Test ID: 21<br>
 Requirement: The subtraction of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
 Inputs: [1,1,2,3,4,5] [3,4,5]<br>
 Expected: [1,2]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 22<br>
 Requirement: The union function can handle negative numbers<br>
@@ -136,7 +136,7 @@ Test ID: 23<br>
 Requirement: The subtract function can handle negative numbers<br>
 Inputs: [-1,-2,-3] [-1]<br>
 Expected: [-2,-3]<br>
-<font color="green">Test Passed </font><br>
+<font color="red">Test Failed </font><br>
 <br>
 Test ID: 24<br>
 Requirement: The intersect function can handle negative numbers<br>

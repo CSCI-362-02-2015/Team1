@@ -10,9 +10,9 @@ public class CohortSubtractDriver{
 
         Cohort cohortA = new Cohort("a", "a", CohortSubtractDriver.getFirstArray(input));
         Cohort cohortB = new Cohort("b", "b", CohortSubtractDriver.getSecondArray(input));  
-        Integer[] expected = CohortSubtractDriver.getFirstArray(output);
+        Integer[] expected = CohortSubtractDriver.getFirstArray(input);
             
-        Cohort cohortResult = Cohort.subtract(cohortA, cohortB);
+        Cohort cohortResult = Cohort.subtract(cohortB, cohortA);
         Integer[] result = cohortResult.getMemberIds().toArray(new Integer[cohortResult.getMemberIds().size()]);
         
         if(CohortSubtractDriver.arrayEquality(result,expected)){
