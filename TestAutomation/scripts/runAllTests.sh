@@ -73,4 +73,4 @@ cd ../reports
 echo "</table>" >> results.html
 echo "</html>" >> results.html
 
-open results.html
+xgd-open results.html
