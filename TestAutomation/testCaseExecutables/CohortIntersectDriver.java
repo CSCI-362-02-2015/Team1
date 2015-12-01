@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-//import org.openmrs.*;
 
 public class CohortIntersectDriver{
   public static void main(String args[]) {
@@ -10,7 +9,7 @@ public class CohortIntersectDriver{
 
         Cohort cohortA = new Cohort("a", "a", CohortIntersectDriver.getFirstArray(input));
         Cohort cohortB = new Cohort("b", "b", CohortIntersectDriver.getSecondArray(input));  
-        Integer[] expected = CohortIntersectDriver.getFirstArray(input);
+        Integer[] expected = CohortIntersectDriver.getFirstArray(output);
             
         Cohort cohortResult = Cohort.intersect(cohortA, cohortB);
         Integer[] result = cohortResult.getMemberIds().toArray(new Integer[cohortResult.getMemberIds().size()]);
@@ -93,7 +92,7 @@ public static boolean arrayEquality(Integer[] array1, Integer[] array2){
     boolean found = false;
     if(array1.length == 0 && array2.length == 0){
         found = true;
-    } else{
+    } else if(array1.length == array2.length){
         for(int i=0; i<array1.length; i++){
             found = false;
             for(int j=0; j<array2.length; j++){
@@ -106,6 +105,8 @@ public static boolean arrayEquality(Integer[] array1, Integer[] array2){
                 break;
             }
         }
+    } else{
+        found=false;
     }
     return found;
 }

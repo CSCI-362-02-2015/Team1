@@ -18,7 +18,10 @@ numTest=$(ls | wc -l)		#count the number of files in the directory
 #begin the new report
 cd ../reports
 echo "<html>" >> results.html
+echo '<link rel="stylesheet" type="text/css" href="report.css">' >> results.html
 echo "<h1>Test Results</h1>" >> results.html
+echo "<table style='border: 1px solid black; border-collapse: collapse'><tr><th>TestID</th><th>Requirement</th><th>Inputs</th><th>Expected Output</th><th>Test Result</th></tr>" >> results.html
+
 
 cd ../project/openmrs-core/api/src/main/java/org/openmrs
 javac -d ../../../../../target/classes/org/openmrs Cohort.java
@@ -29,47 +32,45 @@ javac -cp ../project/openmrs-core/api/target/classes/org/openmrs *.java
 #loop through the test cases
 while [ $num -le $numTest ]; do
 	var=$str$num$ext
+	echo '<tr>' >> ../reports/results.html
 	while read p; do
 	    if [[ ${p:0:1} == D* ]];
 			then result=$(java -cp ../testCaseExecutables/:../project/openmrs-core/api/target/classes/org/openmrs ${p:8} "$input" "$output"); 	#store any System.out from the driver as result and put in the report
 			if [[ $result == Passed ]];
-				then echo '<font color="green">Test '$result' </font><br>' >> ../reports/results.html;
+				then echo '<th><font color="green"> '$result' </font></th>' >> ../reports/results.html;
 				echo -e Test $num ${GREEN}$result${NC}
 			fi 
 			
 			if [[ $result == Failed ]];
-				then echo '<font color="red">Test '$result' </font><br>' >> ../reports/results.html;
-				echo -e $num ${RED}$result${NC}
+				then echo '<th><font color="red"> '$result' </font></th>' >> ../reports/results.html;
+				echo -e Test $num ${RED}$result${NC}
 			fi 
 
 		fi
 
 		if [[ ${p:0:1} == T* ]];
-			then echo $p'<br>' >> ../reports/results.html;		#put the various test case information into the report
+			then echo '<th>'${p:8}'</th>' >> ../reports/results.html;		#put the various test case information into the report
 		fi
 
 		if [[ ${p:0:1} == R* ]];
-			then echo $p'<br>' >> ../reports/results.html;
+			then echo '<th>'${p:12}'</th>' >> ../reports/results.html;
 		fi
 
 		if [[ ${p:0:1} == I* ]];
-			then echo $p'<br>' >> ../reports/results.html;
+			then echo '<th>'${p:8}'</th>' >> ../reports/results.html;
 			input=$p
 		fi
 
 		if [[ ${p:0:1} == E* ]];
-			then echo $p'<br>' >> ../reports/results.html;
+			then echo '<th>'${p:10}'</th>' >> ../reports/results.html;
 			output=$p
 		fi
 	done <$var
 	num=$((num+1))
-	echo "<br>" >> ../reports/results.html
+	echo "</tr>" >> ../reports/results.html
 done
 cd ../reports
+echo "</table>" >> results.html
 echo "</html>" >> results.html
 
-<<<<<<< HEAD
 open results.html
-=======
-xdg-open results.html
->>>>>>> 2bf5084efbfdf3fe214a9096253c6217f8c4f36e

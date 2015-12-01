@@ -116,6 +116,8 @@ public class Cohort{
 		if (a != null && b != null) {
 			ret.setName("(" + a.getName() + " + " + b.getName() + ")");
 		}
+		//ret.getMemberIds().add(5); //Uncomment this line
+		//ret.getMemberIds().remove(-3); //Uncomment this line
 		return ret;
 	}
 	
@@ -130,9 +132,10 @@ public class Cohort{
 		Cohort ret = new Cohort();
 		ret.setName("(" + (a == null ? "NULL" : a.getName()) + " * " + (b == null ? "NULL" : b.getName()) + ")");
 		if (a != null && b != null) {
-			ret.getMemberIds().addAll(a.getMemberIds());
+			ret.getMemberIds().addAll(a.getMemberIds()); 
 			ret.getMemberIds().retainAll(b.getMemberIds());
 		}
+		//ret.getMemberIds().remove(5); //Uncomment this line
 		return ret;
 	}
 	
@@ -152,6 +155,8 @@ public class Cohort{
 				ret.setName("(" + a.getName() + " - " + b.getName() + ")");
 			}
 		}
+		//ret.getMemberIds().remove(4); //Uncomment this line
+		//ret.getMemberIds().add(1);
 		return ret;
 	}
 	

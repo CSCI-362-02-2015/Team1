@@ -1,153 +1,181 @@
 <html>
+<link rel="stylesheet" type="text/css" href="report.css">
 <h1>Test Results</h1>
-Test ID: 1<br>
-Requirement: The union of two Cohorts has no repeated values<br>
-Inputs: [1,2,3,4,5] [3,4,5]<br>
-Expected: [1,2,3,4,5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 2<br>
-Requirement: The union of a non-empty Cohort and an empty Cohort is the non-empty cohort<br>
-Inputs: [1,2,3,4,5] []<br>
-Expected: [1,2,3,4,5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 3<br>
-Requirement: The union of two empty Cohorts is empty<br>
-Inputs: [] []<br>
-Expected: []<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 4<br>
-Requirement: The union of two non-intersecting Cohorts contains the values of both Cohorts<br>
-Inputs: [1,2,3] [4,5]<br>
-Expected: [1,2,3,4,5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-TestID: 5<br>
-Requirement: The union function can handle large numbers<br>
-Inputs: [123456,234567,345678,456789] [3,4,5]<br>
-Expected: [123456,234567,345678,456789,3,4,5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-TestID: 6<br>
-Requirement: The union of an empty an non-empty Cohort where the first Cohort is empty results in the non-empty Cohort<br>
-Inputs: [] [3,4,5]<br>
-Expected: [3,4,5]<br>
-<font color="red">Test Failed </font><br>
-<br>
-TestID: 7<br>
-Requirement: The intersect function can handle large numbered Cohorts<br>
-Inputs: [123456,234567,345678,456789] [345678,456789,5]<br>
-Expected: [345678,456789]<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 8<br>
-Requirement: The intersection of two intersecting Cohorts is their intersection with no duplicates<br>
-Inputs: [1,2,3,4,5] [3,4,5]<br>
-Expected: [3,4,5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 9<br>
-Requirement: The intersection of a non-empty Cohort and an empty Cohort is empty<br>
-Inputs: [1,2,3,4,5] []<br>
-Expected: []<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 10<br>
-Requirement: The intersection of two empty Cohorts is empty<br>
-Inputs: [] []<br>
-Expected: []<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 11<br>
-Requirement: The intersection of two non-intersecting Cohorts is empty<br>
-Inputs: [1,2,3] [4,5]<br>
-Expected: []<br>
-<font color="red">Test Failed </font><br>
-<br>
-TestID: 12<br>
-Requirement: The intersection of two Cohorts, where the first Cohort is empty, is empty<br>
-Inputs: [] [6,7]<br>
-Expected: []<br>
-<font color="green">Test Passed </font><br>
-<br>
-TestID: 13<br>
-Requirement: The subtract function can handle large numbered Cohorts<br>
-Inputs: [123456,234567,345678,456789] [345678,456789]<br>
-Expected: [123456,234567]<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 14<br>
-Requirement: The subtract of two intersecting Cohorts is their removes the values of the second Cohort from the first<br>
-Inputs: [1,2,3,4,5] [3,4,5]<br>
-Expected: [1,2]<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 15<br>
-Requirement: The subtraction of an empty Cohort from a non-empty Cohort is the non-empty Cohort<br>
-Inputs: [1,2,3,4,5] []<br>
-Expected: [1,2,3,4,5]<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 16<br>
-Requirement: The subtraction of two empty Cohorts is empty<br>
-Inputs: [] []<br>
-Expected: []<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 17<br>
-Requirement: The subtraction of two non-intersecting Cohorts is the first Cohort<br>
-Inputs: [1,2,3] [4,5]<br>
-Expected: [1,2,3]<br>
-<font color="red">Test Failed </font><br>
-<br>
-TestID: 18<br>
-Requirement: The subtraction of two Cohorts, where the first Cohort is empty, is empty<br>
-Inputs: [] [6,7]<br>
-Expected: []<br>
-<font color="red">Test Failed </font><br>
-<br>
-TestID: 19<br>
-Requirement: The intersection of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
-Inputs: [1,1,2,3] [1,2]<br>
-Expected: [1,2]<br>
-<font color="green">Test Passed </font><br>
-<br>
-TestID: 20<br>
-Requirement: The union of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
-Inputs: [1,1,2,3,4,5] [1,2,3]<br>
-Expected: [1,2,3,4,5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 21<br>
-Requirement: The subtraction of two Cohorts, where one Cohort has repeated values, has no repeated values<br>
-Inputs: [1,1,2,3,4,5] [3,4,5]<br>
-Expected: [1,2]<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 22<br>
-Requirement: The union function can handle negative numbers<br>
-Inputs: [1,2,3,4,5] [-1,-2,-3]<br>
-Expected: [1,2,3,4,5,-1,-2,-3]<br>
-<font color="green">Test Passed </font><br>
-<br>
-Test ID: 23<br>
-Requirement: The subtract function can handle negative numbers<br>
-Inputs: [-1,-2,-3] [-1]<br>
-Expected: [-2,-3]<br>
-<font color="red">Test Failed </font><br>
-<br>
-Test ID: 24<br>
-Requirement: The intersect function can handle negative numbers<br>
-Inputs: [-1,-2,-3,-4,-5] [-4,-5]<br>
-Expected: [-4,-5]<br>
-<font color="green">Test Passed </font><br>
-<br>
-TestID: 25<br>
-Requirement: The intersect function can handle zero-filled numbers<br>
-Inputs: [1,2,3,4,5] [000001,00002]<br>
-Expected: [1,2]<br>
-<font color="green">Test Passed </font><br>
-<br>
+<table style='border: 1px solid black; border-collapse: collapse'><tr><th>TestID</th><th>Requirement</th><th>Inputs</th><th>Expected Output</th><th>Test Result</th></tr>
+<tr>
+<th> 1</th>
+<th> The union of two Cohorts has no repeated values when the intersection of the inputs is non-empty</th>
+<th> [1,2,3,4,5] [3,4,5]</th>
+<th>[1,2,3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 2</th>
+<th> The union of a non-empty Cohort and an empty Cohort is the non-empty cohort</th>
+<th> [1,2,3,4,5] []</th>
+<th>[1,2,3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 3</th>
+<th> The union of two empty Cohorts is empty</th>
+<th> [] []</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 4</th>
+<th> The union of two non-intersecting Cohorts contains the values of both Cohorts</th>
+<th> [1,2,3] [4,5]</th>
+<th>[1,2,3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 5</th>
+<th> The union function can handle large numbers</th>
+<th> [123456,234567,345678,456789] [3,4,5]</th>
+<th>[123456,234567,345678,456789,3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 6</th>
+<th> The union of an empty an non-empty Cohort where the first Cohort is empty results in the non-empty Cohort</th>
+<th> [] [3,4,5]</th>
+<th>[3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 7</th>
+<th> The intersect function can handle large numbered Cohorts</th>
+<th> [123456,234567,345678,456789] [345678,456789,5]</th>
+<th>[345678,456789]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 8</th>
+<th> The intersection of two intersecting Cohorts is their intersection with no duplicates</th>
+<th> [1,2,3,4,5] [3,4,5]</th>
+<th>[3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 9</th>
+<th> The intersection of a non-empty Cohort and an empty Cohort is empty</th>
+<th> [1,2,3,4,5] []</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 10</th>
+<th> The intersection of two empty Cohorts is empty</th>
+<th> [] []</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 11</th>
+<th> The intersection of two non-intersecting Cohorts is empty</th>
+<th> [1,2,3] [4,5]</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 12</th>
+<th> The intersection of two Cohorts, where the first Cohort is empty, is empty</th>
+<th> [] [6,7]</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 13</th>
+<th> The subtract function can handle large numbered Cohorts</th>
+<th> [123456,234567,345678,456789] [345678,456789]</th>
+<th>[123456,234567]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 14</th>
+<th> The subtract of two intersecting Cohorts is their removes the values of the second Cohort from the first</th>
+<th> [1,2,3,4,5] [3,4,5]</th>
+<th>[1,2]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 15</th>
+<th> The subtraction of an empty Cohort from a non-empty Cohort is the non-empty Cohort</th>
+<th> [1,2,3,4,5] []</th>
+<th>[1,2,3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 16</th>
+<th> The subtraction of two empty Cohorts is empty</th>
+<th> [] []</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 17</th>
+<th> The subtraction of two non-intersecting Cohorts is the first Cohort</th>
+<th> [1,2,3] [4,5]</th>
+<th>[1,2,3]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 18</th>
+<th> The subtraction of two Cohorts, where the first Cohort is empty, is empty</th>
+<th> [] [6,7]</th>
+<th>[]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 19</th>
+<th> The intersection of two Cohorts, where one Cohort has repeated values, has no repeated values</th>
+<th> [1,1,2,3] [1,2]</th>
+<th>[1,2]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 20</th>
+<th> The union of two Cohorts, where one Cohort has repeated values, has no repeated values</th>
+<th> [1,1,2,3,4,5] [1,2,3]</th>
+<th>[1,2,3,4,5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 21</th>
+<th> The subtraction of two Cohorts, where one Cohort has repeated values, has no repeated values</th>
+<th> [1,1,2,3,4,5] [3,4,5]</th>
+<th>[1,2]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 22</th>
+<th> The union function can handle negative numbers</th>
+<th> [1,2,3,4,5] [-1,-2,-3]</th>
+<th>[1,2,3,4,5,-1,-2,-3]</th>
+<th><font color="red"> Failed </font></th>
+</tr>
+<tr>
+<th> 23</th>
+<th> The subtract function can handle negative numbers</th>
+<th> [-1,-2,-3] [-1]</th>
+<th>[-2,-3]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 24</th>
+<th> The intersect function can handle negative numbers</th>
+<th> [-1,-2,-3,-4,-5] [-1,-5]</th>
+<th>[-1,-5]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+<tr>
+<th> 25</th>
+<th> The intersect function can handle zero-filled numbers</th>
+<th> [1,2,3,4,5] [000001,00002,0003]</th>
+<th>[1,2,3]</th>
+<th><font color="green"> Passed </font></th>
+</tr>
+</table>
 </html>

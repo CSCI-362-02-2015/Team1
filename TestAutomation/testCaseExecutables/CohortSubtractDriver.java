@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-//import org.openmrs.*;
 
 public class CohortSubtractDriver{
   public static void main(String args[]) {
@@ -10,9 +9,9 @@ public class CohortSubtractDriver{
 
         Cohort cohortA = new Cohort("a", "a", CohortSubtractDriver.getFirstArray(input));
         Cohort cohortB = new Cohort("b", "b", CohortSubtractDriver.getSecondArray(input));  
-        Integer[] expected = CohortSubtractDriver.getFirstArray(input);
+        Integer[] expected = CohortSubtractDriver.getFirstArray(output);
             
-        Cohort cohortResult = Cohort.subtract(cohortB, cohortA);
+        Cohort cohortResult = Cohort.subtract(cohortA, cohortB);
         Integer[] result = cohortResult.getMemberIds().toArray(new Integer[cohortResult.getMemberIds().size()]);
         
         if(CohortSubtractDriver.arrayEquality(result,expected)){
@@ -93,7 +92,7 @@ public static boolean arrayEquality(Integer[] array1, Integer[] array2){
     boolean found = false;
     if(array1.length == 0 && array2.length == 0){
         found = true;
-    } else{
+    } else if (array1.length == array2.length){
         for(int i=0; i<array1.length; i++){
             found = false;
             for(int j=0; j<array2.length; j++){
@@ -106,6 +105,8 @@ public static boolean arrayEquality(Integer[] array1, Integer[] array2){
                 break;
             }
         }
+    } else{
+        found=false;
     }
     return found;
 }

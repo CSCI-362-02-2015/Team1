@@ -2,7 +2,7 @@ Test ID:	24
 Requirement:	The intersect function can handle negative numbers
 Component:	Cohort
 Method:		public static Cohort intersect(Cohort a, Cohort b)
-Inputs:		[-1,-2,-3,-4,-5] [-4,-5]
-Expected:	[-4,-5]
+Inputs:		[-1,-2,-3,-4,-5] [-1,-5]
+Expected:	[-1,-5]
 Driver:		CohortIntersectDriver
 Notes:
