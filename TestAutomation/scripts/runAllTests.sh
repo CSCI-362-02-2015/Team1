@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 #remove old reports
-cd ../reports
+cd reports
 rm results.html
 
 
